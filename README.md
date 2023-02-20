@@ -2,7 +2,7 @@
 A  chess game for two players made with SFML.
 
 # Game start 
-![Game init image](./Chess/Resources/screenshots/game_init.png)
+![Game init image](./Chess/Resources/screenshots/game_init.PNG)
 
 # Checkmate
-![Checkmate image](./Chess/Resources/screenshots/checkmate.png)
+![Checkmate image](./Chess/Resources/screenshots/checkmate.PNG)
