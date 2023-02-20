@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Pieces">
+      <UniqueIdentifier>{97f5eb2a-2875-4f23-83d9-0b18c5d6e9f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pieces\White Pieces">
+      <UniqueIdentifier>{fa5b9651-39c8-41e1-9927-b0194f8a361e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pieces\Black Pieces">
+      <UniqueIdentifier>{4d8cd72e-4691-4570-9ea4-a535eb94a82e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Managers">
+      <UniqueIdentifier>{ca8908bb-3d87-41cb-9181-16980ccf0c86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Managers\Asset">
+      <UniqueIdentifier>{6fdf300c-b93e-490e-8966-f703e7e01b5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Managers\Input">
+      <UniqueIdentifier>{8c80e9f3-e6c2-4725-ad38-4098c4d6aceb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Managers\UI">
+      <UniqueIdentifier>{b6cc6b21-7d45-49d4-ae8d-490c5bc8b28f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pieces\Rook">
+      <UniqueIdentifier>{33bc5a3d-be23-4bb6-ad2b-9cc2ead81422}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pieces\Pawn">
+      <UniqueIdentifier>{e6e3c089-356f-4439-9d17-31289bab0c78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pieces\Piece">
+      <UniqueIdentifier>{128590da-3261-40f7-901b-37d3ed011c88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pieces\King">
+      <UniqueIdentifier>{742f8c9d-a813-49d1-bc93-b93d7726eb54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pieces\Queen">
+      <UniqueIdentifier>{b94a71c3-1361-468d-bbc3-ae895bbf55e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pieces\Bishop">
+      <UniqueIdentifier>{7b5fbb68-34d0-4d2b-b1ca-3cd39ee9e105}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="States">
+      <UniqueIdentifier>{854a4082-50ff-416c-b218-9071558541f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="States\Main Menu">
+      <UniqueIdentifier>{513287b6-0b00-4d13-9f4a-941e450a8202}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="States\Splash">
+      <UniqueIdentifier>{e44b84bd-991d-4986-b9bd-ea11a1b944a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="States\Play">
+      <UniqueIdentifier>{efee3081-4c8d-4eab-86a9-e494647ff829}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pieces\Knight">
+      <UniqueIdentifier>{39c5cbba-8cdd-4db8-9309-647c1c4fd999}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="States\State">
+      <UniqueIdentifier>{046659a9-d2ac-4e1a-aeca-0a9fbd4cb704}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="States\State Machine">
+      <UniqueIdentifier>{e6992559-a5de-4594-9c19-08adeb81dfae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{2e7f4f9c-6044-41ea-8429-9ec5e1de96fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Game">
+      <UniqueIdentifier>{a66fed0d-1dfb-4001-8a78-bc4190b7ffc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Boxes">
+      <UniqueIdentifier>{5f102bc5-3bae-43a9-ba2a-73deeb52f5e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Boxes\Checkmate">
+      <UniqueIdentifier>{62165708-0b34-4ce9-9ab0-706a094a26a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Boxes\MessageBox">
+      <UniqueIdentifier>{f48751e4-37ac-49da-befe-b5c8ce1263eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Boxes\InvalidMove">
+      <UniqueIdentifier>{7798a76e-d199-45ca-8a64-9c0ca8c66cca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Boxes\InvalidPiece">
+      <UniqueIdentifier>{16e4d1a4-2446-48ea-b839-55c20048a596}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Boxes\Stalemate">
+      <UniqueIdentifier>{fe798add-677b-438e-9f6b-4d9fb581388d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Boxes\BlackWins">
+      <UniqueIdentifier>{2ab432cb-d5f2-4379-9814-7d3080886d91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Boxes\WhiteWins">
+      <UniqueIdentifier>{0df33db4-13b6-4214-a044-b53181d09cec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Teams">
+      <UniqueIdentifier>{187f2c9b-bc5d-40e5-9008-81ec1d9be798}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Teams\WhiteTeam">
+      <UniqueIdentifier>{8b9db131-9969-4feb-9272-7d47d80eb594}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Teams\BlackTeam">
+      <UniqueIdentifier>{6c1039e5-4435-4281-a1b7-9948d4e29191}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Teams\Team">
+      <UniqueIdentifier>{37df20dc-cb74-46eb-9782-7aa025010940}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Moves">
+      <UniqueIdentifier>{2dea39cc-aa65-4cd3-ae61-539625f86a53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Moves\Move">
+      <UniqueIdentifier>{4f416512-29a2-47ea-97b5-5337301f0a09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Moves\CaptureMove">
+      <UniqueIdentifier>{55100001-3b07-42de-8670-031d858527e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Moves\CastleMove">
+      <UniqueIdentifier>{732eb631-4a99-45b5-8f68-e381375a7f7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Moves\NormalMove">
+      <UniqueIdentifier>{321ec1a2-72b6-48f5-b251-06f9b7be6c84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Moves\TransformMove">
+      <UniqueIdentifier>{69ac349f-1922-4c5f-bf28-3841cc2e138c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Managers\Piece">
+      <UniqueIdentifier>{a91eddba-1eee-41d4-a8cc-a766536e9e83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Managers\Sound">
+      <UniqueIdentifier>{088b4fdb-15a8-4a89-b8f6-a6685a33d809}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Managers\Box">
+      <UniqueIdentifier>{d054809e-d05a-48d2-8238-d9aaf1fe9dff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Moves\EnPassant">
+      <UniqueIdentifier>{75fbcad0-9d73-4e21-857b-ab3d926db54f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{e8c08ce4-61b9-46c3-ad62-c7a3196eef26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Managers\Team">
+      <UniqueIdentifier>{8cf43b2f-7ad9-47c8-b4d6-724c020975eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Boxes\Transform">
+      <UniqueIdentifier>{74fa927c-dfed-45ef-b96d-3d9cca2042ae}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AssetManager.cpp">
+      <Filter>Managers\Asset</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Managers\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="UIManager.cpp">
+      <Filter>Managers\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Rook.cpp">
+      <Filter>Pieces\Rook</Filter>
+    </ClCompile>
+    <ClCompile Include="Pawn.cpp">
+      <Filter>Pieces\Pawn</Filter>
+    </ClCompile>
+    <ClCompile Include="Piece.cpp">
+      <Filter>Pieces\Piece</Filter>
+    </ClCompile>
+    <ClCompile Include="King.cpp">
+      <Filter>Pieces\King</Filter>
+    </ClCompile>
+    <ClCompile Include="Queen.cpp">
+      <Filter>Pieces\Queen</Filter>
+    </ClCompile>
+    <ClCompile Include="Bishop.cpp">
+      <Filter>Pieces\Bishop</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuState.cpp">
+      <Filter>States\Main Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="SplashState.cpp">
+      <Filter>States\Splash</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayState.cpp">
+      <Filter>States\Play</Filter>
+    </ClCompile>
+    <ClCompile Include="Knight.cpp">
+      <Filter>Pieces\Knight</Filter>
+    </ClCompile>
+    <ClCompile Include="StateMachine.cpp">
+      <Filter>States\State Machine</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Game\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="WhiteTeam.cpp">
+      <Filter>Game\Teams\WhiteTeam</Filter>
+    </ClCompile>
+    <ClCompile Include="BlackTeam.cpp">
+      <Filter>Game\Teams\BlackTeam</Filter>
+    </ClCompile>
+    <ClCompile Include="Team.cpp">
+      <Filter>Game\Teams\Team</Filter>
+    </ClCompile>
+    <ClCompile Include="PieceManager.cpp">
+      <Filter>Managers\Piece</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundManager.cpp">
+      <Filter>Managers\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="BoxManager.cpp">
+      <Filter>Managers\Box</Filter>
+    </ClCompile>
+    <ClCompile Include="Move.cpp">
+      <Filter>Moves\Move</Filter>
+    </ClCompile>
+    <ClCompile Include="CaptureMove.cpp">
+      <Filter>Moves\CaptureMove</Filter>
+    </ClCompile>
+    <ClCompile Include="CastleMove.cpp">
+      <Filter>Moves\CastleMove</Filter>
+    </ClCompile>
+    <ClCompile Include="NormalMove.cpp">
+      <Filter>Moves\NormalMove</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformMove.cpp">
+      <Filter>Moves\TransformMove</Filter>
+    </ClCompile>
+    <ClCompile Include="EnPassant.cpp">
+      <Filter>Moves\EnPassant</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="TeamManager.cpp">
+      <Filter>Managers\Team</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformBox.cpp">
+      <Filter>Boxes\Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageBox.cpp">
+      <Filter>Boxes\MessageBox</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DEFINITIONS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WhiteBishop.h">
+      <Filter>Pieces\White Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="WhiteKing.h">
+      <Filter>Pieces\White Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="WhiteKnight.h">
+      <Filter>Pieces\White Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="WhitePawn.h">
+      <Filter>Pieces\White Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="WhiteQueen.h">
+      <Filter>Pieces\White Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="WhiteRook.h">
+      <Filter>Pieces\White Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="BlackBishop.h">
+      <Filter>Pieces\Black Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="BlackKing.h">
+      <Filter>Pieces\Black Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="BlackKnight.h">
+      <Filter>Pieces\Black Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="BlackPawn.h">
+      <Filter>Pieces\Black Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="BlackQueen.h">
+      <Filter>Pieces\Black Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="BlackRook.h">
+      <Filter>Pieces\Black Pieces</Filter>
+    </ClInclude>
+    <ClInclude Include="AssetManager.h">
+      <Filter>Managers\Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>Managers\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="UIManager.h">
+      <Filter>Managers\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Rook.h">
+      <Filter>Pieces\Rook</Filter>
+    </ClInclude>
+    <ClInclude Include="Pawn.h">
+      <Filter>Pieces\Pawn</Filter>
+    </ClInclude>
+    <ClInclude Include="Piece.h">
+      <Filter>Pieces\Piece</Filter>
+    </ClInclude>
+    <ClInclude Include="King.h">
+      <Filter>Pieces\King</Filter>
+    </ClInclude>
+    <ClInclude Include="Queen.h">
+      <Filter>Pieces\Queen</Filter>
+    </ClInclude>
+    <ClInclude Include="Bishop.h">
+      <Filter>Pieces\Bishop</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuState.h">
+      <Filter>States\Main Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="SplashState.h">
+      <Filter>States\Splash</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayState.h">
+      <Filter>States\Play</Filter>
+    </ClInclude>
+    <ClInclude Include="Knight.h">
+      <Filter>Pieces\Knight</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>States\State</Filter>
+    </ClInclude>
+    <ClInclude Include="StateMachine.h">
+      <Filter>States\State Machine</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Game\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageBox.h">
+      <Filter>Boxes\MessageBox</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckmateBox.h">
+      <Filter>Boxes\Checkmate</Filter>
+    </ClInclude>
+    <ClInclude Include="InvalidMoveBox.h">
+      <Filter>Boxes\InvalidMove</Filter>
+    </ClInclude>
+    <ClInclude Include="InvalidPieceBox.h">
+      <Filter>Boxes\InvalidPiece</Filter>
+    </ClInclude>
+    <ClInclude Include="StalemateBox.h">
+      <Filter>Boxes\Stalemate</Filter>
+    </ClInclude>
+    <ClInclude Include="BlackWinsBox.h">
+      <Filter>Boxes\BlackWins</Filter>
+    </ClInclude>
+    <ClInclude Include="WhiteWinsBox.h">
+      <Filter>Boxes\WhiteWins</Filter>
+    </ClInclude>
+    <ClInclude Include="WhiteTeam.h">
+      <Filter>Game\Teams\WhiteTeam</Filter>
+    </ClInclude>
+    <ClInclude Include="BlackTeam.h">
+      <Filter>Game\Teams\BlackTeam</Filter>
+    </ClInclude>
+    <ClInclude Include="Team.h">
+      <Filter>Game\Teams\Team</Filter>
+    </ClInclude>
+    <ClInclude Include="Move.h">
+      <Filter>Moves\Move</Filter>
+    </ClInclude>
+    <ClInclude Include="CaptureMove.h">
+      <Filter>Moves\CaptureMove</Filter>
+    </ClInclude>
+    <ClInclude Include="CastleMove.h">
+      <Filter>Moves\CastleMove</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalMove.h">
+      <Filter>Moves\NormalMove</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformMove.h">
+      <Filter>Moves\TransformMove</Filter>
+    </ClInclude>
+    <ClInclude Include="PieceManager.h">
+      <Filter>Managers\Piece</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundManager.h">
+      <Filter>Managers\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="BoxManager.h">
+      <Filter>Managers\Box</Filter>
+    </ClInclude>
+    <ClInclude Include="Typedefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EnPassant.h">
+      <Filter>Moves\EnPassant</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="TeamManager.h">
+      <Filter>Managers\Team</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformBox.h">
+      <Filter>Boxes\Transform</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="table.ini">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

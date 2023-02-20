@@ -1,0 +1,40 @@
+﻿  AssetManager.cpp
+  Bishop.cpp
+  BlackTeam.cpp
+  BoxManager.cpp
+  CaptureMove.cpp
+  CastleMove.cpp
+  EnPassant.cpp
+  Game.cpp
+  InputManager.cpp
+  King.cpp
+  Knight.cpp
+  main.cpp
+  MainMenuState.cpp
+C:\Projects\C++\SFML\SFML-Chess\Chess\MainMenuState.cpp(17,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Projects\C++\SFML\SFML-Chess\Chess\MainMenuState.cpp(16,28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  MessageBox.cpp
+  Move.cpp
+  NormalMove.cpp
+  Pawn.cpp
+  Piece.cpp
+C:\Projects\C++\SFML\SFML-Chess\Chess\Piece.cpp(35,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Projects\C++\SFML\SFML-Chess\Chess\Piece.cpp(34,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  PieceManager.cpp
+  PlayState.cpp
+  Generating Code...
+  Compiling...
+  Queen.cpp
+  Rook.cpp
+  SoundManager.cpp
+  SplashState.cpp
+  StateMachine.cpp
+  Team.cpp
+  TeamManager.cpp
+  TransformBox.cpp
+  TransformMove.cpp
+  UIManager.cpp
+  Utils.cpp
+  WhiteTeam.cpp
+  Generating Code...
+  Chess.vcxproj -> C:\Projects\C++\SFML\SFML-Chess\x64\Debug\Chess.exe
