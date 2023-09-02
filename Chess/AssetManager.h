@@ -1,5 +1,6 @@
 #pragma once
 #include <map>
+#include <mutex>
 #include "SFML/Graphics.hpp"
 #include "SFML/Audio.hpp"
 
@@ -33,5 +34,6 @@ private:
 	SoundBuffers _buffers;
 	Sounds _sounds;
 	Icons _icons;
+	std::mutex _mutex;
 };
 

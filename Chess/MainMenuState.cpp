@@ -9,10 +9,6 @@ MainMenuState::MainMenuState()
 
 void MainMenuState::Init() 
 {
-	data->assets->LoadTexture("Main Menu Background", MAIN_MENU_STATE_BACKGROUND_FILEPATH);
-	data->assets->LoadTexture("Play Button", PLAY_BUTTON_FILEPATH);
-	data->assets->LoadTexture("Play Button Hover", PLAY_BUTTON_HOVER_FILEPATH);
-
 	_background.setTexture(data->assets->GetTexture("Main Menu Background"));
 	_playButton.setTexture(data->assets->GetTexture("Play Button"));
 	_playButton.setPosition(

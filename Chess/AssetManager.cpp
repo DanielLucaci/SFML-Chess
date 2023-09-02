@@ -2,14 +2,15 @@
 #include <iostream>
 
 void AssetManager::LoadTexture(const std::string& name, const std::string& filepath) {
+	std::unique_lock<std::mutex> lock(_mutex);
 	sf::Texture tex;
-	if (!tex.loadFromFile(filepath)) {
+	if (!this->_textures[name].loadFromFile(filepath)) {
 		std::cerr << "Error reading image " << filepath << ". Image not found\n";
 	}
-	this->_textures[name] = tex;
 }
 
 void AssetManager::LoadFont(const std::string& name, const std::string& filepath) {
+	std::unique_lock<std::mutex> lock(_mutex);
 	sf::Font font;
 	if (font.loadFromFile(filepath)) {
 		this->_fonts[name] = font;
@@ -17,6 +18,7 @@ void AssetManager::LoadFont(const std::string& name, const std::string& filepath
 }
 
 void AssetManager::LoadSound(const std::string& name, const std::string& filepath) {
+	std::unique_lock<std::mutex> lock(_mutex);
 	sf::SoundBuffer buffer;
 	if (buffer.loadFromFile(filepath)) {
 		this->_buffers[name] = buffer;
@@ -25,6 +27,7 @@ void AssetManager::LoadSound(const std::string& name, const std::string& filepat
 }
 
 void AssetManager::LoadIcon(const std::string& name, const std::string& filepath) {
+	std::unique_lock<std::mutex> lock(_mutex);
 	sf::Image icon;
 	if (icon.loadFromFile(filepath)) {
 		this->_icons[name] = icon;

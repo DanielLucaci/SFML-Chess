@@ -7,13 +7,13 @@ Game::Game(int width, int height, const std::string& title) {
 	data->window->setFramerateLimit(60);
 	data->window->setKeyRepeatEnabled(false);
 
-
 	// Load Icon
 	data->assets->LoadIcon("Window Icon", ICON_FILEPATH);
 	sf::Image& icon = data->assets->GetIcon("Window Icon");
 	data->window->setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
-	
+
 	data->machine->AddState(StateRef(new SplashState()));
+	
 	this->Run();
 }
 
