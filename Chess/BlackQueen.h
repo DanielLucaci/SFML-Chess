@@ -6,9 +6,5 @@
 class BlackQueen : public Queen
 {
 public:
-	BlackQueen(GameDataRef data, const Position& position, int id): Queen(data, position, id)
-	{
-		this->texture = sf::Sprite(_data->assets.GetTexture("Black Queen"));
-		this->UpdatePiecePosition();
-	}
+	BlackQueen(const Position& position, int id);
 };

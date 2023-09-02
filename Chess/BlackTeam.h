@@ -1,17 +1,9 @@
 #pragma once
-#pragma once
 #include "Team.h"
-#include "BlackPawn.h"
-#include "BlackKnight.h"
-#include "BlackBishop.h"
-#include "BlackRook.h"
-#include "BlackKing.h"
-#include "BlackQueen.h"
-
 
 class BlackTeam : public Team {
 public:
-	BlackTeam(GameDataRef, Table);
+	BlackTeam(Table);
 
 	BlackTeam(const BlackTeam&);
 

@@ -1,8 +1,5 @@
 #include "MessageBox.h"
-
-MessageBox::MessageBox(GameDataRef data) : _data(data) {
-
-}
+#include "GameData.h"
 
 void MessageBox::Init(const sf::FloatRect& rect, float radius, const sf::Color& fillColor, const sf::Color& outlineColor, float outlineWidth) {
 	// Draw circles 	
@@ -90,7 +87,7 @@ void MessageBox::SetOutlines(const sf::FloatRect& rect, float radius, const sf::
 }
 
 void MessageBox::SetText(const std::string& text, const sf::Color& color, unsigned int size) {
-	this->message.setFont(_data->assets.GetFont("Times New Roman"));
+	this->message.setFont(data->assets->GetFont("Times New Roman"));
 	this->message.setStyle(sf::Text::Bold);
 	this->message.setFillColor(color);
 	this->message.setString(text);
@@ -102,11 +99,11 @@ void MessageBox::SetTextPosition(const sf::Vector2f& position) {
 	this->message.setPosition(position);
 }
 
-void MessageBox::Display(WindowRef window) {
+void MessageBox::Display() {
 	for (int i = 0; i < 4; i++) {
-		window->draw(this->edges[i]);
-		window->draw(this->outlines[i]);
+		data->window->draw(this->edges[i]);
+		data->window->draw(this->outlines[i]);
 	}
-	window->draw(this->box);
-	window->draw(this->message);
+	data->window->draw(this->box);
+	data->window->draw(this->message);
 }

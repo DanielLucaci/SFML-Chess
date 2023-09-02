@@ -3,8 +3,14 @@
 #include "NormalMove.h"
 #include "PieceManager.h"
 #include "TeamManager.h"
+#include "WhitePawn.h"
+#include "WhiteKnight.h"
+#include "WhiteBishop.h"
+#include "WhiteRook.h"
+#include "WhiteKing.h"
+#include "WhiteQueen.h"
 
-WhiteTeam::WhiteTeam(GameDataRef data, Table table) : Team(data, table) {
+WhiteTeam::WhiteTeam(Table table) : Team(table) {
 	this->init();
 	this->over = 33;
 }
@@ -13,11 +19,11 @@ WhiteTeam::WhiteTeam(const WhiteTeam& other) : Team(other) {}
 
 void WhiteTeam::init() {
 	this->pieces.insert(this->pieces.begin(), {
-		 new WhitePawn(_data, Position(1, 0), 1), new WhitePawn(_data, Position(1, 1), 2), new WhitePawn(_data, Position(1, 2), 3), new WhitePawn(_data, Position(1, 3), 4),
-		 new WhitePawn(_data, Position(1, 4), 5), new WhitePawn(_data, Position(1, 5), 6), new WhitePawn(_data, Position(1, 6), 7), new WhitePawn(_data, Position(1, 7), 8),
-		 new WhiteRook(_data, Position(0, 0), 9), new WhiteKnight(_data, Position(0, 1), 10), new WhiteBishop(_data, Position(0, 2), 11), new WhiteQueen(_data, Position(0, 3), 12),
-		 new WhiteKing(_data, Position(0, 4), 13), new WhiteBishop(_data, Position(0, 5), 14), new WhiteKnight(_data, Position(0, 6), 15), new WhiteRook(_data, Position(0, 7), 16)
-		});
+		 new WhitePawn(Position(1, 0), 1), new WhitePawn(Position(1, 1), 2), new WhitePawn(Position(1, 2), 3), new WhitePawn(Position(1, 3), 4),
+		 new WhitePawn(Position(1, 4), 5), new WhitePawn(Position(1, 5), 6), new WhitePawn(Position(1, 6), 7), new WhitePawn(Position(1, 7), 8),
+		 new WhiteRook(Position(0, 0), 9), new WhiteKnight(Position(0, 1), 10), new WhiteBishop(Position(0, 2), 11), new WhiteQueen(Position(0, 3), 12),
+		 new WhiteKing(Position(0, 4), 13), new WhiteBishop(Position(0, 5), 14), new WhiteKnight(Position(0, 6), 15), new WhiteRook(Position(0, 7), 16)
+	});
 }
 
 void WhiteTeam::checkKingSideCastling(Team* other) {
@@ -231,7 +237,7 @@ void WhiteTeam::UpdateKing()
 
 void WhiteTeam::AddNewBishop(const Position& pos)
 {
-	Piece* bishop = new WhiteBishop(this->_data, pos, this->over);
+	Piece* bishop = new WhiteBishop(pos, this->over);
 	this->pieces.push_back(bishop);
 	Utils::SetTablePosition(this->_table, pos, this->over);
 	PieceManager::GetPieceMap()[this->over] = bishop;
@@ -240,7 +246,7 @@ void WhiteTeam::AddNewBishop(const Position& pos)
 
 void WhiteTeam::AddNewKnight(const Position& pos)
 {
-	Piece* knight = new WhiteKnight(this->_data, pos, this->over);
+	Piece* knight = new WhiteKnight(pos, this->over);
 	this->pieces.push_back(knight);
 	Utils::SetTablePosition(this->_table, pos, this->over);
 	PieceManager::GetPieceMap()[this->over] = knight;
@@ -249,7 +255,7 @@ void WhiteTeam::AddNewKnight(const Position& pos)
 
 void WhiteTeam::AddNewRook(const Position& pos)
 {
-	Piece* rook = new WhiteRook(this->_data, pos, this->over);
+	Piece* rook = new WhiteRook(pos, this->over);
 	this->pieces.push_back(rook);
 	Utils::SetTablePosition(this->_table, pos, this->over);
 	PieceManager::GetPieceMap()[this->over] = rook;
@@ -258,7 +264,7 @@ void WhiteTeam::AddNewRook(const Position& pos)
 
 void WhiteTeam::AddNewQueen(const Position& pos)
 {
-	Piece* queen = new WhiteQueen(this->_data, pos, this->over);
+	Piece* queen = new WhiteQueen(pos, this->over);
 	this->pieces.push_back(queen);
 	Utils::SetTablePosition(this->_table, pos, this->over);
 	PieceManager::GetPieceMap()[this->over] = queen;

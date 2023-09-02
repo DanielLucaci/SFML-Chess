@@ -11,7 +11,7 @@ typedef std::vector<Piece*> Pieces;
 class Team
 {
 public:
-	Team(GameDataRef, Table);
+	Team(Table);
 	Team(const Team&);
 	~Team();
 
@@ -55,7 +55,6 @@ public:
 protected:
 	Pieces pieces, givingCheck;
 	bool check, doubleCheck;
-	GameDataRef _data;
 	Moves _moves;
 	Places _validPlaces;
 	Table _table;

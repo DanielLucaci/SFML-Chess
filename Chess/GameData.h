@@ -4,13 +4,25 @@
 #include "InputManager.h"
 #include "UIManager.h"
 
+class GameData {
 
-struct GameData {
-	AssetManager assets;
-	StateMachine machine;
-	WindowRef window = std::make_shared<sf::RenderWindow>();
-	InputManager input;
-	UIManager ui = UIManager(this->window);
+public:
+	AssetManager* assets;
+	StateMachine* machine;
+	WindowRef window;
+	InputManager* input;
+	UIManager* ui;
+
+	GameData(const GameData&) = delete;
+
+	~GameData();
+
+	static GameData* getInstance();
+
+private:  
+	static GameData* instance;
+
+	GameData();
 };
 
-typedef std::shared_ptr<GameData> GameDataRef;
+extern const GameData* const data;

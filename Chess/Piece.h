@@ -1,6 +1,5 @@
 #pragma once
 #include "SFML/Graphics.hpp"
-#include "GameData.h"
 #include "Utils.h"
 #include "Typedefs.h"
 
@@ -17,7 +16,7 @@ class Piece
 {
 public:
 	Piece() = default;
-	Piece(GameDataRef, const Position&, int, PieceType);
+	Piece(const Position&, int, PieceType);
 
 	const sf::Sprite& GetTexture() const;
 
@@ -68,7 +67,6 @@ protected:
 	Piece* lockingPiece;
 	Piece* lockedPiece;
 	bool check, moved, captured;
-	GameDataRef _data;
 	sf::Sprite texture;
 };
 

@@ -1,14 +1,12 @@
 #pragma once
-#include "GameData.h"
+#include <string>
 
 class SoundManager
 {
 public:
-	SoundManager(GameDataRef);	
+	SoundManager();	
 	void PlaySound(const std::string&);
 private:
 	void LoadSounds();
-
-	GameDataRef _data;
 };
 

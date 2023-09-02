@@ -4,8 +4,14 @@
 #include "EnPassant.h"
 #include "PieceManager.h"
 #include "TeamManager.h"
+#include "BlackPawn.h"
+#include "BlackKnight.h"
+#include "BlackBishop.h"
+#include "BlackRook.h"
+#include "BlackKing.h"
+#include "BlackQueen.h"
 
-BlackTeam::BlackTeam(GameDataRef data, Table table): Team(data, table) {
+BlackTeam::BlackTeam(Table table): Team(table) {
 	this->init();
 	this->over = 41;
 }
@@ -17,10 +23,10 @@ BlackTeam::BlackTeam(const BlackTeam& other) : Team(other) {
 
 void BlackTeam::init() {
 	this->pieces.insert(this->pieces.begin(), {
-		 new BlackPawn(_data, Position(6, 0), 17), new BlackPawn(_data, Position(6, 1), 18), new BlackPawn(_data, Position(6, 2), 19), new BlackPawn(_data, Position(6, 3), 20),
-		 new BlackPawn(_data, Position(6, 4), 21), new BlackPawn(_data, Position(6, 5), 22), new BlackPawn(_data, Position(6, 6), 23), new BlackPawn(_data, Position(6, 7), 24),
-		 new BlackRook(_data, Position(7, 0), 25), new BlackKnight(_data, Position(7, 1), 26), new BlackBishop(_data, Position(7, 2), 27), new BlackQueen(_data, Position(7, 3), 28),
-		 new BlackKing(_data, Position(7, 4), 29), new BlackBishop(_data, Position(7, 5), 30), new BlackKnight(_data, Position(7, 6), 31), new BlackRook(_data, Position(7, 7), 32)
+		 new BlackPawn(Position(6, 0), 17), new BlackPawn(Position(6, 1), 18), new BlackPawn(Position(6, 2), 19), new BlackPawn(Position(6, 3), 20),
+		 new BlackPawn(Position(6, 4), 21), new BlackPawn(Position(6, 5), 22), new BlackPawn(Position(6, 6), 23), new BlackPawn(Position(6, 7), 24),
+		 new BlackRook(Position(7, 0), 25), new BlackKnight(Position(7, 1), 26), new BlackBishop(Position(7, 2), 27), new BlackQueen(Position(7, 3), 28),
+		 new BlackKing(Position(7, 4), 29), new BlackBishop(Position(7, 5), 30), new BlackKnight(Position(7, 6), 31), new BlackRook(Position(7, 7), 32)
 		});
 }
 
@@ -232,7 +238,7 @@ void BlackTeam::UpdateKing()
 
 void BlackTeam::AddNewBishop(const Position& pos)
 {
-	Piece* bishop = new BlackBishop(this->_data, pos, this->over);
+	Piece* bishop = new BlackBishop(pos, this->over);
 	this->pieces.push_back(bishop);
 	Utils::SetTablePosition(this->_table, pos, this->over);
 	PieceManager::GetPieceMap().insert({ this->over, bishop });
@@ -241,7 +247,7 @@ void BlackTeam::AddNewBishop(const Position& pos)
 
 void BlackTeam::AddNewKnight(const Position& pos)
 {
-	Piece* knight = new BlackKnight(this->_data, pos, this->over);
+	Piece* knight = new BlackKnight(pos, this->over);
 	this->pieces.push_back(knight);
 	Utils::SetTablePosition(this->_table, pos, this->over);
 	PieceManager::GetPieceMap().at(this->over) = knight;
@@ -250,7 +256,7 @@ void BlackTeam::AddNewKnight(const Position& pos)
 
 void BlackTeam::AddNewRook(const Position& pos)
 {
-	Piece* rook = new BlackRook(this->_data, pos, this->over);
+	Piece* rook = new BlackRook(pos, this->over);
 	this->pieces.push_back(rook);
 	Utils::SetTablePosition(this->_table, pos, this->over);
 	PieceManager::GetPieceMap().at(this->over) = rook;
@@ -259,7 +265,7 @@ void BlackTeam::AddNewRook(const Position& pos)
 
 void BlackTeam::AddNewQueen(const Position& pos)
 {
-	Piece* queen = new BlackQueen(this->_data, pos, this->over);
+	Piece* queen = new BlackQueen(pos, this->over);
 	this->pieces.push_back(queen);
 	Utils::SetTablePosition(this->_table, pos, this->over);
 	PieceManager::GetPieceMap().at(this->over) = queen;

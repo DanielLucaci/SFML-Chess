@@ -5,13 +5,13 @@
 #include "TeamManager.h"
 #include <fstream>
 #include "TransformBox.h"
+#include "GameData.h"
 
-
-PlayState::PlayState(GameDataRef data) : _data(data), _soundManager(data), _pieceManager(data), _boxManager(data) {
+PlayState::PlayState() : _soundManager(), _pieceManager(), _boxManager() {
 	this->InitTable();
 	this->ReadTable();
-	this->_whiteTeam = new WhiteTeam(data, this->_table);
-	this->_blackTeam = new BlackTeam(data, this->_table);
+	this->_whiteTeam = new WhiteTeam(this->_table);
+	this->_blackTeam = new BlackTeam(this->_table);
 	this->_pieceManager.LoadPieces(_whiteTeam).LoadPieces(_blackTeam);
 	TeamManager::LoadTeams(this->_whiteTeam, this->_blackTeam);
 	this->_currentState = PlayStates::PLAYING;
@@ -23,16 +23,15 @@ PlayState::PlayState(GameDataRef data) : _data(data), _soundManager(data), _piec
 }
 
 void PlayState::Init() {
-	// Init Board Texture
-	this->_boardTexture = sf::Sprite(this->_data->assets.GetTexture("Table"));
+	this->_boardTexture = sf::Sprite(data->assets->GetTexture("Table"));
 }
 
 void PlayState::HandleInput() {
 	sf::Event event;
-	while (_data->window->pollEvent(event)) {
+	while (data->window->pollEvent(event)) {
 		switch (event.type) {
 		case sf::Event::Closed:
-			_data->window->close();
+			data->window->close();
 			break;
 		case sf::Event::MouseButtonPressed:
 			if (event.mouseButton.button == sf::Mouse::Left && !this->_lockClick) {
@@ -51,7 +50,7 @@ void PlayState::HandleInput() {
 }
 
 void PlayState::Update(float dt) {
-	_data->ui.Update();
+	data->ui->Update();
 
 	if (this->_box != nullptr && this->_elapsedTimeBox.getElapsedTime().asSeconds() >= TIME_TO_DISPLAY_MESSAGE) {
 		this->_box = nullptr;
@@ -63,7 +62,7 @@ void PlayState::Update(float dt) {
 		return;
 
 	// Get clicked square
-	Position pos = Utils::getClickedSquare(_data->window);
+	Position pos = Utils::getClickedSquare(data->window);
 	
 	// User clicked outside the board
 	if (pos.x < 0 || pos.y < 0)
@@ -101,11 +100,11 @@ void PlayState::Update(float dt) {
 							}
 							else {
 								static_cast<TransformBox*>(this->_box)->Update(dt);
-								_data->window->clear();
+								data->window->clear();
 								this->DrawBoard();
 								this->DrawPieces();
-								static_cast<TransformBox*>(_box)->Display(_data->window);
-								_data->window->display();
+								static_cast<TransformBox*>(_box)->Display();
+								data->window->display();
 							}
 						}
 					}
@@ -187,25 +186,25 @@ void PlayState::Update(float dt) {
 }
 
 void PlayState::Draw(float dt) {
-	_data->window->clear();
+	data->window->clear();
 
 	// Draw Board
 	this->DrawBoard();
 
 	// Draw Hover square
-	_data->ui.Draw();
+	data->ui->Draw();
 
 	// Draw Valid squares 
 	if (this->_selectedPiece != 0) 
-		_data->ui.DrawValidSquares(this->_pieceManager[_selectedPiece]->GetValidMoves(), this->_table);
+		data->ui->DrawValidSquares(this->_pieceManager[_selectedPiece]->GetValidMoves(), this->_table);
 	
 
 	if (this->_whiteTeam->isCheck()) {
-		_data->ui.DrawCheck(this->_pieceManager[29]->GetPosition());
+		data->ui->DrawCheck(this->_pieceManager[29]->GetPosition());
 	}
 	
 	if (this->_blackTeam->isCheck()) {
-		_data->ui.DrawCheck(this->_pieceManager[13]->GetPosition());
+		data->ui->DrawCheck(this->_pieceManager[13]->GetPosition());
 	}
 
 	this->DrawPieces();
@@ -214,27 +213,27 @@ void PlayState::Draw(float dt) {
 		case PlayStates::INVALID:
 		case PlayStates::STALEMATE:
 		case PlayStates::CHECKMATE: 
-			this->_box->Display(this->_data->window);
+			this->_box->Display();
 			break;
 		case PlayStates::TRANSFORM:
-			static_cast<TransformBox*>(this->_box)->Display(_data->window);
+			static_cast<TransformBox*>(this->_box)->Display();
 			break;
 		default:
 			break;
 	}
-	_data->window->display();
+	data->window->display();
 }
 
 void PlayState::DrawPieces() {
 	PieceMap pieces = this->_pieceManager.GetPieceMap();
 	for (PieceMap::const_iterator it = pieces.begin(); it != pieces.end(); it++)
 		if (!it->second->GetCaptured()) 
-			_data->window->draw(it->second->GetTexture());
+			data->window->draw(it->second->GetTexture());
 }
 
 void PlayState::DrawBoard()
 {
-	_data->window->draw(this->_boardTexture);
+	data->window->draw(this->_boardTexture);
 }
 
 int PlayState::GetTurn() const

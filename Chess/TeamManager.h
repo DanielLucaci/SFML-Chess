@@ -5,7 +5,6 @@
 class TeamManager
 {
 public: 
-	TeamManager() = default;
 	static void LoadTeams(Team* white, Team* black) {
 		_whiteTeam = white;
 		_blackTeam = black;
@@ -32,7 +31,6 @@ public:
 		return _blackTeam->GetLastMove();
 		
 	}
-
 
 	static Team* _whiteTeam;
 	static Team* _blackTeam;

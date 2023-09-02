@@ -2,7 +2,7 @@
 #include "TeamManager.h"
 #include "PieceManager.h"
 
-Rook::Rook(GameDataRef data, const Position& position, int id) : Piece(data, position, id, PieceType::ROOK) {  }
+Rook::Rook(const Position& position, int id) : Piece(position, id, PieceType::ROOK) {  }
 
 void Rook::Update(Table table) {
     this->Clear();

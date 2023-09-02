@@ -1,7 +1,7 @@
 #include "Pawn.h"
 #include "TeamManager.h"
 
-Pawn::Pawn(GameDataRef data, const Position& position, int id) : Piece(data, position, id, PieceType::PAWN) {  }
+Pawn::Pawn(const Position& position, int id) : Piece(position, id, PieceType::PAWN) {  }
 
 void Pawn::Update(Table table) {
     this->Clear();

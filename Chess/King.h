@@ -4,7 +4,7 @@
 class King: public Piece
 {
 public:
-	King(GameDataRef, const Position&, int);
+	King(const Position&, int);
 	void Update(Table);
 	bool isValidKing(const Position&, Table, const Places&);
 };

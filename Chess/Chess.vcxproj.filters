@@ -154,6 +154,9 @@
     <Filter Include="Boxes\Transform">
       <UniqueIdentifier>{74fa927c-dfed-45ef-b96d-3d9cca2042ae}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\Board">
+      <UniqueIdentifier>{a4da48ba-385d-461f-b26c-17674e5b2377}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -251,6 +254,48 @@
     </ClCompile>
     <ClCompile Include="MessageBox.cpp">
       <Filter>Boxes\MessageBox</Filter>
+    </ClCompile>
+    <ClCompile Include="Board.cpp">
+      <Filter>Game\Board</Filter>
+    </ClCompile>
+    <ClCompile Include="WhiteBishop.cpp">
+      <Filter>Pieces\White Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="WhiteKing.cpp">
+      <Filter>Pieces\White Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="WhiteKnight.cpp">
+      <Filter>Pieces\White Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="WhitePawn.cpp">
+      <Filter>Pieces\White Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="WhiteQueen.cpp">
+      <Filter>Pieces\White Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="WhiteRook.cpp">
+      <Filter>Pieces\White Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="BlackBishop.cpp">
+      <Filter>Pieces\Black Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="BlackKnight.cpp">
+      <Filter>Pieces\Black Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="BlackPawn.cpp">
+      <Filter>Pieces\Black Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="BlackQueen.cpp">
+      <Filter>Pieces\Black Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="BlackRook.cpp">
+      <Filter>Pieces\Black Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="BlackKing.cpp">
+      <Filter>Pieces\Black Pieces</Filter>
+    </ClCompile>
+    <ClCompile Include="GameData.cpp">
+      <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -412,6 +457,9 @@
     </ClInclude>
     <ClInclude Include="TransformBox.h">
       <Filter>Boxes\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="Board.h">
+      <Filter>Game\Board</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -6,6 +6,7 @@ class InputManager
 {
 public:
 	InputManager() = default;
+
 	~InputManager() = default;
 
 	bool isSpriteClicked(const sf::Sprite&, sf::Mouse::Button, WindowRef);

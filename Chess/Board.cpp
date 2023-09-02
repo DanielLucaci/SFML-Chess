@@ -2,7 +2,7 @@
 #include <fstream>
 #include <utility>
 
-Board::Board(GameDataRef data, Team* white, Team* black) : _data(data), whiteTeam(white), blackTeam(black),overWhite(33), overBlack(41) {
+Board::Board(Team* white, Team* black) : whiteTeam(white), blackTeam(black), overWhite(33), overBlack(41) {
 	this->initTable();
 	this->initPieces();
 }

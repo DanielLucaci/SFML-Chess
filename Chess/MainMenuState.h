@@ -6,14 +6,13 @@
 class MainMenuState : public State
 {
 public:
-	MainMenuState(GameDataRef _data);
-
+	MainMenuState();
+	~MainMenuState() = default;
 	void Init();
 	void HandleInput();
 	void Update(float dt);
 	void Draw(float dt);
 private:
-	GameDataRef _data;
 	sf::Sprite _background, _playButton;
 	sf::Clock _clock;
 };

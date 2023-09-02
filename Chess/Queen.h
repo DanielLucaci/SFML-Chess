@@ -4,7 +4,7 @@
 class Queen : public Piece
 {
 public:
-	Queen(GameDataRef, const Position&, int);
+	Queen(const Position&, int);
 	void Update(Table);
 };
 

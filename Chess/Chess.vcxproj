@@ -29,26 +29,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -144,12 +144,20 @@
   <ItemGroup>
     <ClCompile Include="AssetManager.cpp" />
     <ClCompile Include="Bishop.cpp" />
+    <ClCompile Include="BlackBishop.cpp" />
+    <ClCompile Include="BlackKing.cpp" />
+    <ClCompile Include="BlackKnight.cpp" />
+    <ClCompile Include="BlackPawn.cpp" />
+    <ClCompile Include="BlackQueen.cpp" />
+    <ClCompile Include="BlackRook.cpp" />
     <ClCompile Include="BlackTeam.cpp" />
+    <ClCompile Include="Board.cpp" />
     <ClCompile Include="BoxManager.cpp" />
     <ClCompile Include="CaptureMove.cpp" />
     <ClCompile Include="CastleMove.cpp" />
     <ClCompile Include="EnPassant.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameData.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="King.cpp" />
     <ClCompile Include="Knight.cpp" />
@@ -173,6 +181,12 @@
     <ClCompile Include="TransformMove.cpp" />
     <ClCompile Include="UIManager.cpp" />
     <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="WhiteBishop.cpp" />
+    <ClCompile Include="WhiteKing.cpp" />
+    <ClCompile Include="WhiteKnight.cpp" />
+    <ClCompile Include="WhitePawn.cpp" />
+    <ClCompile Include="WhiteQueen.cpp" />
+    <ClCompile Include="WhiteRook.cpp" />
     <ClCompile Include="WhiteTeam.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -186,6 +200,7 @@
     <ClInclude Include="BlackRook.h" />
     <ClInclude Include="BlackTeam.h" />
     <ClInclude Include="BlackWinsBox.h" />
+    <ClInclude Include="Board.h" />
     <ClInclude Include="BoxManager.h" />
     <ClInclude Include="CaptureMove.h" />
     <ClInclude Include="CastleMove.h" />

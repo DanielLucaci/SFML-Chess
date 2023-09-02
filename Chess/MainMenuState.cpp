@@ -1,17 +1,20 @@
 #include "MainMenuState.h"
 #include "PlayState.h"
+#include "GameData.h"
 
-MainMenuState::MainMenuState(GameDataRef data): _data(data) { 
+MainMenuState::MainMenuState()
+{
 	this->Init();
 }
 
-void MainMenuState::Init() {
-	this->_data->assets.LoadTexture("Main Menu Background", MAIN_MENU_STATE_BACKGROUND_FILEPATH);
-	this->_data->assets.LoadTexture("Play Button", PLAY_BUTTON_FILEPATH);
-	this->_data->assets.LoadTexture("Play Button Hover", PLAY_BUTTON_HOVER_FILEPATH);
+void MainMenuState::Init() 
+{
+	data->assets->LoadTexture("Main Menu Background", MAIN_MENU_STATE_BACKGROUND_FILEPATH);
+	data->assets->LoadTexture("Play Button", PLAY_BUTTON_FILEPATH);
+	data->assets->LoadTexture("Play Button Hover", PLAY_BUTTON_HOVER_FILEPATH);
 
-	_background.setTexture(_data->assets.GetTexture("Main Menu Background"));
-	_playButton.setTexture(_data->assets.GetTexture("Play Button"));
+	_background.setTexture(data->assets->GetTexture("Main Menu Background"));
+	_playButton.setTexture(data->assets->GetTexture("Play Button"));
 	_playButton.setPosition(
 		(int)(SCREEN_WIDTH / 2.f - _playButton.getLocalBounds().width / 2.f), 
 		(int)(SCREEN_HEIGHT / 2.f - _playButton.getLocalBounds().height / 2.f)
@@ -20,22 +23,22 @@ void MainMenuState::Init() {
 
 void MainMenuState::HandleInput() {
 	sf::Event event; 
-	while (_data->window->pollEvent(event)) {
+	while (data->window->pollEvent(event)) {
 		switch (event.type) {
 			case sf::Event::Closed:
-				_data->window->close();
+				data->window->close();
 				break;
 			case sf::Event::MouseButtonPressed:
 				// Resume
-				if (_data->input.isSpriteClicked(_playButton, sf::Mouse::Left, _data->window)) {
-					_data->machine.AddState(StateRef(new PlayState(_data)));
+				if (data->input->isSpriteClicked(_playButton, sf::Mouse::Left, data->window)) {
+					data->machine->AddState(StateRef(new PlayState()));
 				}
 				break;
 			case sf::Event::MouseMoved:
-				if (_data->input.isSpriteHovered(_playButton, _data->window))
-					_playButton.setTexture(_data->assets.GetTexture("Play Button Hover"));
+				if (data->input->isSpriteHovered(_playButton, data->window))
+					_playButton.setTexture(data->assets->GetTexture("Play Button Hover"));
 				else
-					_playButton.setTexture(_data->assets.GetTexture("Play Button"));
+					_playButton.setTexture(data->assets->GetTexture("Play Button"));
 				break;
 			default:
 				break;
@@ -48,8 +51,8 @@ void MainMenuState::Update(float dt) {
 }
 
 void MainMenuState::Draw(float dt) {
-	_data->window->clear();
-	_data->window->draw(_background);
-	_data->window->draw(_playButton);
-	_data->window->display();
+	data->window->clear();
+	data->window->draw(_background);
+	data->window->draw(_playButton);
+	data->window->display();
 }

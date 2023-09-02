@@ -4,6 +4,6 @@
 class Rook : public Piece
 {
 public:
-	Rook(GameDataRef, const Position&, int);
+	Rook(const Position&, int);
 	void Update(Table);
 };

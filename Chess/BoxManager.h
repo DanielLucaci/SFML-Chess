@@ -7,12 +7,10 @@ typedef std::map<std::string, MessageBox*> BoxMap;
 class BoxManager
 {
 public:
-	BoxManager() = delete;
-	BoxManager(GameDataRef);
+	BoxManager();
 	MessageBox* GetBox(const std::string&) const;
 private:
 	void LoadBoxes();
 	BoxMap _boxes;
-	GameDataRef _data;
 };
 

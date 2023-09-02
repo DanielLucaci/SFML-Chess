@@ -1,13 +1,12 @@
 #pragma once
 #include "SFML/Graphics.hpp"
-#include "GameData.h"
 
 class MessageBox
 {
 public:
-	MessageBox(GameDataRef);
+	MessageBox() = default;
 	void Init(const sf::FloatRect&, float, const sf::Color&, const sf::Color&, float);
-	void Display(WindowRef);
+	void Display();
 protected:
 	void InitBox(const sf::FloatRect&, float, const sf::Color&);
 	void SetCircles(const sf::FloatRect&, float, const sf::Color&, const sf::Color&, float);
@@ -15,7 +14,6 @@ protected:
 	void SetText(const std::string&, const sf::Color&, unsigned int);
 	void SetTextPosition(const sf::Vector2f&);
 
-	GameDataRef _data;
 	sf::ConvexShape box;
 	sf::CircleShape edges[4];
 	sf::RectangleShape outlines[4];

@@ -2,7 +2,7 @@
 #include <iterator>
 #include <exception>
 
-Team::Team(GameDataRef data, Table table): _data(data) {
+Team::Team(Table table) {
 	this->check = this->doubleCheck = false;
 	this->over = -1;
 	this->_table = table;
@@ -16,7 +16,6 @@ Team::Team(const Team& other) {
 	this->doubleCheck = other.doubleCheck;
 	this->_validPlaces = other._validPlaces;
 	this->pieces = other.pieces;
-	this->_data = other._data;
 	this->over = other.over;
 	this->_table = other._table;
 	for (int i = 0; i < 8; i++)

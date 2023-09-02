@@ -1,7 +1,7 @@
 #include "Knight.h"
 #include "TeamManager.h"
 
-Knight::Knight(GameDataRef data, const Position& position, int id) : Piece(data, position, id, PieceType::KNIGHT) {  }
+Knight::Knight(const Position& position, int id) : Piece(position, id, PieceType::KNIGHT) {  }
 
 void Knight::Update(Table table) {
     this->Clear();

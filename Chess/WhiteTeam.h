@@ -1,15 +1,9 @@
 #pragma once
 #include "Team.h"
-#include "WhitePawn.h"
-#include "WhiteKnight.h"
-#include "WhiteBishop.h"
-#include "WhiteRook.h"
-#include "WhiteKing.h"
-#include "WhiteQueen.h"
 
 class WhiteTeam : public Team {
 public:
-	WhiteTeam(GameDataRef data, Table table);
+	WhiteTeam(Table table);
 
 	WhiteTeam(const WhiteTeam& other);
 

@@ -4,7 +4,7 @@
 class Bishop : public Piece
 {
 public:
-	Bishop(GameDataRef, const Position&, int);
+	Bishop(const Position&, int);
 	void Update(Table);
 };
 

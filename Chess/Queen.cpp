@@ -2,7 +2,7 @@
 #include "TeamManager.h"
 #include "PieceManager.h"
 
-Queen::Queen(GameDataRef data, const Position& position, int id) : Piece(data, position, id, PieceType::QUEEN) {  }
+Queen::Queen(const Position& position, int id) : Piece(position, id, PieceType::QUEEN) {  }
 
 void Queen::Update(Table table) {
     this->Clear();

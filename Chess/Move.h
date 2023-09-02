@@ -2,6 +2,7 @@
 #include "DEFINITIONS.h"
 #include <iostream>
 
+
 enum class MoveType {
 	NORMAL,
 	CAPTURE,
@@ -40,6 +41,10 @@ public:
 	{
 		this->type = MoveType::NORMAL;
 		this->_firstMove = false;
+	}
+
+	int GetPieceId() {
+		return m_piece.id;
 	}
 
 	const MoveType& GetType() const {

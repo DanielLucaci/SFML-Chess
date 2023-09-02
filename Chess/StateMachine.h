@@ -12,7 +12,7 @@ public:
 	StateMachine() = default;
 	~StateMachine() = default;
 
-	void AddState(StateRef newState, bool isReplacing = true);
+	void AddState(StateRef, bool = true);
 	void RemoveState();
 	void ProcessStateChanges();
 

@@ -1,7 +1,7 @@
 #include "King.h"
 #include "TeamManager.h"
 
-King::King(GameDataRef data, const Position& position, int id) : Piece(data, position, id, PieceType::KING) {}
+King::King(const Position& position, int id) : Piece(position, id, PieceType::KING) {}
 
 bool King::isValidKing(const Position& position, Table table, const Places& places) {
 	// Outside the table 

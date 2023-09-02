@@ -7,19 +7,19 @@
 #include "StalemateBox.h"
 #include "TransformBox.h"
 
-BoxManager::BoxManager(GameDataRef data): _data(data) {
+BoxManager::BoxManager() {
 	this->LoadBoxes();
 }
 
 void BoxManager::LoadBoxes()
 {
-	this->_boxes["Black Wins"] = new BlackWinsBox(this->_data);
-	this->_boxes["White Wins"] = new WhiteWinsBox(this->_data);
-	this->_boxes["Checkmate"] = new CheckmateBox(this->_data);
-	this->_boxes["Stalemate"] = new StalemateBox(this->_data);
-	this->_boxes["Invalid Move"] = new InvalidMoveBox(this->_data);
-	this->_boxes["Invalid Piece"] = new InvalidPieceBox(this->_data);
-	this->_boxes["Transform Piece"] = new TransformBox(this->_data);
+	this->_boxes["Black Wins"] = new BlackWinsBox();
+	this->_boxes["White Wins"] = new WhiteWinsBox();
+	this->_boxes["Checkmate"] = new CheckmateBox();
+	this->_boxes["Stalemate"] = new StalemateBox();
+	this->_boxes["Invalid Move"] = new InvalidMoveBox();
+	this->_boxes["Invalid Piece"] = new InvalidPieceBox();
+	this->_boxes["Transform Piece"] = new TransformBox();
 }
 
 MessageBox* BoxManager::GetBox(const std::string& name) const {

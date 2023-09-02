@@ -1,6 +1,5 @@
 #pragma once
 #include "State.h"
-#include "GameData.h"
 #include "Team.h"
 #include "PieceManager.h"
 #include "SoundManager.h"
@@ -12,7 +11,7 @@
 class PlayState: public State
 {
 public:
-	PlayState(GameDataRef);
+	PlayState();
 	void Init();
 	void HandleInput();
 	void Update(float dt);
@@ -26,7 +25,6 @@ private:
 	void InitTable();
 	void MovePiece(Move*);
 	void makeSound(Move*);
-	GameDataRef _data;
 
 	sf::Sprite _boardTexture;
 	Team* _whiteTeam;

@@ -1,0 +1,82 @@
+# Ignore Visual Studio files
+.vscode/
+.vs/
+*.suo
+*.user
+*.sln.docstates
+
+# Ignore generated project files
+Debug/
+Release/
+x64/
+x86/
+Chess/x64/
+Chess/x86/
+*.sdf
+*.opensdf
+*.vcxproj.user
+
+# Ignore compiled output
+*.exe
+*.dll
+*.pdb
+*.ilk
+*.aps
+*.lib
+*.idb
+*.exp
+*.res
+
+# Ignore logs and databases
+*.log
+*.sqlite
+
+# Ignore user-specific files
+*.userprefs
+*.suo
+*.sdf
+*.scc
+
+# Ignore generated files by CMake (if applicable)
+CMakeFiles/
+CMakeCache.txt
+CMakeScripts/
+Testing/
+
+# Ignore package management files (e.g., vcpkg, conan)
+vcpkg/
+conan/
+
+# Ignore user-specific files and folders
+Debug/
+Release/
+ipch/
+*.suo
+*.user
+*.sdf
+*.sbr
+*.db
+*.log
+*.dat
+*.ilk
+*.pdm
+*.aps
+*.xml
+*.idb
+*.aps
+*.res
+*.pch
+*.ncb
+*.plg
+[Bb]in
+[Dd]ebug*/
+[Rr]elease*/
+x64/
+x86/
+build/
+
+# Ignore macOS-specific files
+.DS_Store
+
+# Ignore Linux-specific files
+Thumbs.db

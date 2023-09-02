@@ -8,7 +8,7 @@ typedef std::map<int, Piece*> PieceMap;
 class PieceManager
 {
 public:
-	PieceManager(GameDataRef);
+	PieceManager();
 	PieceManager& LoadPieces(Team*);
 	void AddPiece(Piece*);
 	static PieceMap& GetPieceMap();

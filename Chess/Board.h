@@ -6,7 +6,7 @@
 class Board
 {
 public:
-	Board(GameDataRef, Team*, Team*);
+	Board(Team*, Team*);
 	Board(const Board&);
 
 	~Board();
@@ -25,6 +25,7 @@ private:
 	Table table;
 	PieceMap pieceMap;
 	int overWhite, overBlack;
-	GameDataRef _data;
 };
+
+
 

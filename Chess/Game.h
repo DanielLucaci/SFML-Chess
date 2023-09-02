@@ -1,6 +1,5 @@
 #pragma once
 #include "Board.h"
-#include "GameData.h"
 #include <memory>
 #include <string>
 
@@ -11,7 +10,6 @@ public:
 private:
 	const float dt = 1.f / 60.f;
 	sf::Clock _clock;
-	GameDataRef _data = std::make_shared<GameData>();
 	void Run();
 };
 

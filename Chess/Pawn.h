@@ -4,6 +4,6 @@
 class Pawn : public Piece
 {
 public:
-	Pawn(GameDataRef, const Position&, int);
+	Pawn(const Position&, int);
 	void Update(Table);
 };
