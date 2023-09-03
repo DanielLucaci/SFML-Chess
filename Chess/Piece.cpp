@@ -1,6 +1,6 @@
 #include "Piece.h"
 #include <iostream>
-#include "GameData.h"
+#include "WindowManager.h"
 
 Piece::Piece(const Position& pos, int id, PieceType type):
 	position(pos),
@@ -114,7 +114,7 @@ void Piece::Clear()
 }
 
 void Piece::Draw() {
-	data->window->draw(this->texture);
+	window->draw(this->texture);
 }
 
 bool Piece::canMakeMove(Position pos)

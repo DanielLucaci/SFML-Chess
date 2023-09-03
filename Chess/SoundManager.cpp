@@ -1,5 +1,5 @@
 #include "SoundManager.h"
-#include "GameData.h"
+#include "AssetManager.h"
 
 SoundManager::SoundManager() 
 {
@@ -12,5 +12,5 @@ void SoundManager::LoadSounds() {
 
 void SoundManager::PlaySound(const std::string& name)
 {
-	data->assets->PlaySound(name);
+	assetManager->PlaySound(name);
 }

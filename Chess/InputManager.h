@@ -5,12 +5,19 @@
 class InputManager
 {
 public:
+	InputManager(const InputManager&) = delete;
+
+	~InputManager();
+
+	static InputManager* getInputManager();
+
+	bool isSpriteClicked(const sf::Sprite&, sf::Mouse::Button);
+	bool isSpriteHovered(const sf::Sprite&);
+	sf::Vector2i GetMousePosition();
+private:
 	InputManager() = default;
 
-	~InputManager() = default;
-
-	bool isSpriteClicked(const sf::Sprite&, sf::Mouse::Button, WindowRef);
-	bool isSpriteHovered(const sf::Sprite&, WindowRef);
-	sf::Vector2i GetMousePosition(WindowRef);
+	static InputManager* _instance;
 };
 
+extern InputManager* const inputManager;

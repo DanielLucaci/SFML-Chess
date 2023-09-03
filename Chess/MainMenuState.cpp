@@ -1,6 +1,11 @@
 #include "MainMenuState.h"
 #include "PlayState.h"
-#include "GameData.h"
+#include "AssetManager.h"
+#include "InputManager.h"
+#include "StateManager.h"
+#include "WindowManager.h"
+
+// TODO: Inject window
 
 MainMenuState::MainMenuState()
 {
@@ -9,8 +14,8 @@ MainMenuState::MainMenuState()
 
 void MainMenuState::Init() 
 {
-	_background.setTexture(data->assets->GetTexture("Main Menu Background"));
-	_playButton.setTexture(data->assets->GetTexture("Play Button"));
+	_background.setTexture(assetManager->GetTexture("Main Menu Background"));
+	_playButton.setTexture(assetManager->GetTexture("Play Button"));
 	_playButton.setPosition(
 		(int)(SCREEN_WIDTH / 2.f - _playButton.getLocalBounds().width / 2.f), 
 		(int)(SCREEN_HEIGHT / 2.f - _playButton.getLocalBounds().height / 2.f)
@@ -19,22 +24,22 @@ void MainMenuState::Init()
 
 void MainMenuState::HandleInput() {
 	sf::Event event; 
-	while (data->window->pollEvent(event)) {
+	while (window->pollEvent(event)) {
 		switch (event.type) {
 			case sf::Event::Closed:
-				data->window->close();
+				window->close();
 				break;
 			case sf::Event::MouseButtonPressed:
 				// Resume
-				if (data->input->isSpriteClicked(_playButton, sf::Mouse::Left, data->window)) {
-					data->machine->AddState(StateRef(new PlayState()));
+				if (inputManager->isSpriteClicked(_playButton, sf::Mouse::Left)) {
+					stateManager->AddState(StateRef(new PlayState()));
 				}
 				break;
 			case sf::Event::MouseMoved:
-				if (data->input->isSpriteHovered(_playButton, data->window))
-					_playButton.setTexture(data->assets->GetTexture("Play Button Hover"));
+				if (inputManager->isSpriteHovered(_playButton))
+					_playButton.setTexture(assetManager->GetTexture("Play Button Hover"));
 				else
-					_playButton.setTexture(data->assets->GetTexture("Play Button"));
+					_playButton.setTexture(assetManager->GetTexture("Play Button"));
 				break;
 			default:
 				break;
@@ -47,8 +52,8 @@ void MainMenuState::Update(float dt) {
 }
 
 void MainMenuState::Draw(float dt) {
-	data->window->clear();
-	data->window->draw(_background);
-	data->window->draw(_playButton);
-	data->window->display();
+	window->clear();
+	window->draw(_background);
+	window->draw(_playButton);
+	window->display();
 }

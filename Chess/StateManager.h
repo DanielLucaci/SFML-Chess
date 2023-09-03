@@ -6,11 +6,12 @@
 typedef std::unique_ptr<State> StateRef;
 typedef std::stack<StateRef> States;
 
-class StateMachine
+class StateManager
 {
 public:
-	StateMachine() = default;
-	~StateMachine() = default;
+	~StateManager();
+
+	static StateManager* getInstance();
 
 	void AddState(StateRef, bool = true);
 	void RemoveState();
@@ -18,6 +19,10 @@ public:
 
 	StateRef& GetActiveState();
 private:
+	StateManager() = default;
+
+	static StateManager* _instance;
+
 	States _states;
 	StateRef _newState;
 
@@ -26,3 +31,4 @@ private:
 	bool _isAdding;
 };
 
+extern StateManager* const stateManager;

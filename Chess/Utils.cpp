@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cmath>
 #include "PieceManager.h"
+#include "WindowManager.h"
 
 bool Utils::isWhitePiece(int id) {
 	return (id >= 1 && id <= 16) || (id >= 33 && id <= 40);
@@ -47,7 +48,7 @@ bool Utils::isPieceProtected(int id, const PieceIds& PieceIds) {
 	return std::count(PieceIds.begin(), PieceIds.end(), id);
 }
 
-Position Utils::getClickedSquare(WindowRef window) {
+Position Utils::getClickedSquare() {
 	Position pos = sf::Mouse::getPosition(*window) / 75;
 	return Position(7 - pos.y, pos.x);
 }

@@ -1,8 +1,8 @@
 #include "WhiteKing.h"
-#include "GameData.h"
+#include "AssetManager.h"
 
 WhiteKing::WhiteKing(const Position& position, int id) : King(position, id)
 {
-	this->texture = sf::Sprite(data->assets->GetTexture("White King"));
+	this->texture = sf::Sprite(assetManager->GetTexture("White King"));
 	this->UpdatePiecePosition();
 }

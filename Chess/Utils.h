@@ -25,7 +25,7 @@ public:
 
 	static bool isPieceProtected(int, const PieceIds&);
 
-	static Position getClickedSquare(WindowRef);
+	static Position getClickedSquare();
 
 	static bool isValidPiece(int, int);
 

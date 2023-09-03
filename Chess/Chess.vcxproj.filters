@@ -70,9 +70,6 @@
     <Filter Include="States\State">
       <UniqueIdentifier>{046659a9-d2ac-4e1a-aeca-0a9fbd4cb704}</UniqueIdentifier>
     </Filter>
-    <Filter Include="States\State Machine">
-      <UniqueIdentifier>{e6992559-a5de-4594-9c19-08adeb81dfae}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Game">
       <UniqueIdentifier>{2e7f4f9c-6044-41ea-8429-9ec5e1de96fa}</UniqueIdentifier>
     </Filter>
@@ -157,6 +154,12 @@
     <Filter Include="Game\Board">
       <UniqueIdentifier>{a4da48ba-385d-461f-b26c-17674e5b2377}</UniqueIdentifier>
     </Filter>
+    <Filter Include="States\State Manager">
+      <UniqueIdentifier>{e6992559-a5de-4594-9c19-08adeb81dfae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Managers\Window">
+      <UniqueIdentifier>{c4e13726-3f6e-4c1d-8fb4-04fa3605b318}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -201,8 +204,8 @@
     <ClCompile Include="Knight.cpp">
       <Filter>Pieces\Knight</Filter>
     </ClCompile>
-    <ClCompile Include="StateMachine.cpp">
-      <Filter>States\State Machine</Filter>
+    <ClCompile Include="StateManager.cpp">
+      <Filter>States\State Manager</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Game\Game</Filter>
@@ -294,15 +297,12 @@
     <ClCompile Include="BlackKing.cpp">
       <Filter>Pieces\Black Pieces</Filter>
     </ClCompile>
-    <ClCompile Include="GameData.cpp">
-      <Filter>Header Files</Filter>
+    <ClCompile Include="WindowManager.cpp">
+      <Filter>Managers\Window</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DEFINITIONS.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GameData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="WhiteBishop.h">
@@ -383,8 +383,8 @@
     <ClInclude Include="State.h">
       <Filter>States\State</Filter>
     </ClInclude>
-    <ClInclude Include="StateMachine.h">
-      <Filter>States\State Machine</Filter>
+    <ClInclude Include="StateManager.h">
+      <Filter>States\State Manager</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Game\Game</Filter>
@@ -460,6 +460,9 @@
     </ClInclude>
     <ClInclude Include="Board.h">
       <Filter>Game\Board</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowManager.h">
+      <Filter>Managers\Window</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

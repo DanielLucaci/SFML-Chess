@@ -1,5 +1,5 @@
 #include "WhiteKnight.h"
-#include "GameData.h"
+#include "AssetManager.h"
 
 WhiteKnight::WhiteKnight(const Position& position, int id) : Knight(position, id)
 {
@@ -16,6 +16,6 @@ WhiteKnight::WhiteKnight(const Position& position, int id) : Knight(position, id
 		break;
 	}
 
-	this->texture = sf::Sprite(data->assets->GetTexture("White Knight"));
+	this->texture = sf::Sprite(assetManager->GetTexture("White Knight"));
 	this->UpdatePiecePosition();
 }

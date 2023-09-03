@@ -7,11 +7,11 @@
 class UIManager
 {
 public: 
-	UIManager() = default;
-	UIManager(WindowRef);
-	~UIManager() = default;
+	~UIManager();
+	UIManager(const UIManager&) = delete;
 
-	UIManager(const UIManager&);
+	static UIManager* getUIManager();
+
 	void DrawValidSquares(const ValidMoves&, Table);
 	void DrawValidSquaresTeam(const Places&, int);
 	void DrawCheck(const Position&);
@@ -19,10 +19,13 @@ public:
 	void Update();
 	void Draw();
 private:
+	UIManager();
 	void initHoverSquare();
 	void initRedQuare();
-	WindowRef _window;
+
+	static UIManager* _instance;
 	sf::RectangleShape hoverSquare;
 	sf::RectangleShape redSquare;
 };
 
+extern UIManager* const uiManager;

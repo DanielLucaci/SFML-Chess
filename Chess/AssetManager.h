@@ -10,12 +10,12 @@ typedef std::map<std::string, sf::Sound> Sounds;
 typedef std::map<std::string, sf::SoundBuffer> SoundBuffers;
 typedef std::map<std::string, sf::Image> Icons;
 
-
 class AssetManager
 {
 public:
-	AssetManager() = default;
-	~AssetManager() = default;
+	~AssetManager();
+
+	static AssetManager* getInstance();
 
 	void LoadTexture(const std::string&, const std::string&);
 	sf::Texture& GetTexture(const std::string&);
@@ -29,6 +29,9 @@ public:
 	void LoadIcon(const std::string&, const std::string&);
 	sf::Image& GetIcon(const std::string&);
 private:
+	AssetManager() = default;
+
+	static AssetManager* _instance;
 	Textures _textures;
 	Fonts _fonts;
 	SoundBuffers _buffers;
@@ -37,3 +40,4 @@ private:
 	std::mutex _mutex;
 };
 
+extern AssetManager* const assetManager;

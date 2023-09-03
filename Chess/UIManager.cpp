@@ -1,18 +1,28 @@
 #include "UIManager.h"
 #include "Move.h"
 #include "Utils.h"
+#include "WindowManager.h"
 
-UIManager::UIManager(WindowRef window): _window(window)
+UIManager* UIManager::_instance = nullptr;
+
+UIManager* const uiManager = UIManager::getUIManager();
+
+UIManager::UIManager()
 {
 	this->initHoverSquare();
 	this->initRedQuare();
 }
 
-UIManager::UIManager(const UIManager& other)
-{
-	this->hoverSquare = other.hoverSquare;
-	this->redSquare = other.redSquare;
-	this->_window = other._window;
+UIManager::~UIManager() {
+	if (_instance != nullptr)
+		delete(_instance);
+}
+
+UIManager* UIManager::getUIManager() {
+	if (_instance == nullptr) {
+		_instance = new UIManager();
+	}
+	return _instance;
 }
 
 void UIManager::setRedSquarePosition(const Position& pos)
@@ -22,7 +32,7 @@ void UIManager::setRedSquarePosition(const Position& pos)
 
 void UIManager::Update()
 {
-	Position mousePos = sf::Mouse::getPosition(*this->_window);
+	Position mousePos = sf::Mouse::getPosition(*window);
 	int row = mousePos.x / 75;
 	int column = mousePos.y / 75;
 	this->hoverSquare.setPosition((float)row * 75.f + 5.f, (float)column*75.f + 5.f);
@@ -55,7 +65,7 @@ void UIManager::DrawValidSquares(const ValidMoves& moves, Table table) {
 				break;
 		}
 		rect.setPosition(75.f * pos.y + 5.f, 75.f * (7 - pos.x) + 5.f);
-		this->_window->draw(rect);
+		window->draw(rect);
 	}
 }
 
@@ -69,7 +79,7 @@ void UIManager::DrawValidSquaresTeam(const Places& places, int teamNr)
 		transparentRect.setPosition(75.f * pos.y + 5.f, 75.f * (7 - pos.x) + 5.f);
 		transparentRect.setOutlineThickness(5.f);
 		transparentRect.setOutlineColor(color);
-		this->_window->draw(transparentRect);
+		window->draw(transparentRect);
 	}
 }
 
@@ -78,13 +88,13 @@ void UIManager::DrawCheck(const Position& pos)
 	sf::RectangleShape rect(sf::Vector2f(75.f, 75.f));
 	rect.setPosition(pos.y * 75.f, (7 - pos.x) * 75.f);
 	rect.setFillColor(sf::Color(220, 20, 60));
-	this->_window->draw(rect);
+	window->draw(rect);
 }
 
 void UIManager::Draw()
 {
-	this->_window->draw(hoverSquare);
-	this->_window->draw(redSquare);
+	window->draw(hoverSquare);
+	window->draw(redSquare);
 }
 
 

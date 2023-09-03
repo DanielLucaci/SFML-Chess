@@ -1,5 +1,4 @@
 #include "PieceManager.h"
-#include "GameData.h"
 
 PieceMap PieceManager::_pieces = PieceMap();
 

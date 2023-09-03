@@ -1,7 +1,25 @@
 #include "AssetManager.h"
 #include <iostream>
 
-void AssetManager::LoadTexture(const std::string& name, const std::string& filepath) {
+AssetManager* AssetManager::_instance = nullptr;
+
+AssetManager* const assetManager = AssetManager::getInstance();
+
+AssetManager::~AssetManager() 
+{
+	if (_instance != nullptr)
+		delete(_instance);
+}
+
+AssetManager* AssetManager::getInstance() 
+{
+	if (_instance == nullptr)
+		_instance = new AssetManager();
+	return _instance;
+}
+
+void AssetManager::LoadTexture(const std::string& name, const std::string& filepath) 
+{
 	std::unique_lock<std::mutex> lock(_mutex);
 	sf::Texture tex;
 	if (!this->_textures[name].loadFromFile(filepath)) {

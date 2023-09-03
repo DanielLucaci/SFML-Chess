@@ -157,7 +157,6 @@
     <ClCompile Include="CastleMove.cpp" />
     <ClCompile Include="EnPassant.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="GameData.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="King.cpp" />
     <ClCompile Include="Knight.cpp" />
@@ -174,7 +173,7 @@
     <ClCompile Include="Rook.cpp" />
     <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="SplashState.cpp" />
-    <ClCompile Include="StateMachine.cpp" />
+    <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="Team.cpp" />
     <ClCompile Include="TeamManager.cpp" />
     <ClCompile Include="TransformBox.cpp" />
@@ -188,6 +187,7 @@
     <ClCompile Include="WhiteQueen.cpp" />
     <ClCompile Include="WhiteRook.cpp" />
     <ClCompile Include="WhiteTeam.cpp" />
+    <ClCompile Include="WindowManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AssetManager.h" />
@@ -208,7 +208,6 @@
     <ClInclude Include="DEFINITIONS.h" />
     <ClInclude Include="EnPassant.h" />
     <ClInclude Include="Game.h" />
-    <ClInclude Include="GameData.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="InvalidMoveBox.h" />
     <ClInclude Include="InvalidPieceBox.h" />
@@ -228,7 +227,7 @@
     <ClInclude Include="SplashState.h" />
     <ClInclude Include="StalemateBox.h" />
     <ClInclude Include="State.h" />
-    <ClInclude Include="StateMachine.h" />
+    <ClInclude Include="StateManager.h" />
     <ClInclude Include="Team.h" />
     <ClInclude Include="TeamManager.h" />
     <ClInclude Include="TransformBox.h" />
@@ -244,6 +243,7 @@
     <ClInclude Include="WhiteRook.h" />
     <ClInclude Include="WhiteTeam.h" />
     <ClInclude Include="WhiteWinsBox.h" />
+    <ClInclude Include="WindowManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="table.ini" />

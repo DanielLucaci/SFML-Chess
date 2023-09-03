@@ -5,7 +5,9 @@
 #include "TeamManager.h"
 #include <fstream>
 #include "TransformBox.h"
-#include "GameData.h"
+#include "UIManager.h"
+#include "AssetManager.h"
+#include "WindowManager.h"
 
 PlayState::PlayState() : _soundManager(), _pieceManager(), _boxManager() {
 	this->InitTable();
@@ -23,15 +25,15 @@ PlayState::PlayState() : _soundManager(), _pieceManager(), _boxManager() {
 }
 
 void PlayState::Init() {
-	this->_boardTexture = sf::Sprite(data->assets->GetTexture("Table"));
+	this->_boardTexture = sf::Sprite(assetManager->GetTexture("Table"));
 }
 
 void PlayState::HandleInput() {
 	sf::Event event;
-	while (data->window->pollEvent(event)) {
+	while (window->pollEvent(event)) {
 		switch (event.type) {
 		case sf::Event::Closed:
-			data->window->close();
+			window->close();
 			break;
 		case sf::Event::MouseButtonPressed:
 			if (event.mouseButton.button == sf::Mouse::Left && !this->_lockClick) {
@@ -50,7 +52,7 @@ void PlayState::HandleInput() {
 }
 
 void PlayState::Update(float dt) {
-	data->ui->Update();
+	uiManager->Update();
 
 	if (this->_box != nullptr && this->_elapsedTimeBox.getElapsedTime().asSeconds() >= TIME_TO_DISPLAY_MESSAGE) {
 		this->_box = nullptr;
@@ -62,7 +64,7 @@ void PlayState::Update(float dt) {
 		return;
 
 	// Get clicked square
-	Position pos = Utils::getClickedSquare(data->window);
+	Position pos = Utils::getClickedSquare();
 	
 	// User clicked outside the board
 	if (pos.x < 0 || pos.y < 0)
@@ -100,11 +102,11 @@ void PlayState::Update(float dt) {
 							}
 							else {
 								static_cast<TransformBox*>(this->_box)->Update(dt);
-								data->window->clear();
+								window->clear();
 								this->DrawBoard();
 								this->DrawPieces();
 								static_cast<TransformBox*>(_box)->Display();
-								data->window->display();
+								window->display();
 							}
 						}
 					}
@@ -186,25 +188,25 @@ void PlayState::Update(float dt) {
 }
 
 void PlayState::Draw(float dt) {
-	data->window->clear();
+	window->clear();
 
 	// Draw Board
 	this->DrawBoard();
 
 	// Draw Hover square
-	data->ui->Draw();
+	uiManager->Draw();
 
 	// Draw Valid squares 
 	if (this->_selectedPiece != 0) 
-		data->ui->DrawValidSquares(this->_pieceManager[_selectedPiece]->GetValidMoves(), this->_table);
+		uiManager->DrawValidSquares(this->_pieceManager[_selectedPiece]->GetValidMoves(), this->_table);
 	
 
 	if (this->_whiteTeam->isCheck()) {
-		data->ui->DrawCheck(this->_pieceManager[29]->GetPosition());
+		uiManager->DrawCheck(this->_pieceManager[29]->GetPosition());
 	}
 	
 	if (this->_blackTeam->isCheck()) {
-		data->ui->DrawCheck(this->_pieceManager[13]->GetPosition());
+		uiManager->DrawCheck(this->_pieceManager[13]->GetPosition());
 	}
 
 	this->DrawPieces();
@@ -221,19 +223,19 @@ void PlayState::Draw(float dt) {
 		default:
 			break;
 	}
-	data->window->display();
+	window->display();
 }
 
 void PlayState::DrawPieces() {
 	PieceMap pieces = this->_pieceManager.GetPieceMap();
 	for (PieceMap::const_iterator it = pieces.begin(); it != pieces.end(); it++)
 		if (!it->second->GetCaptured()) 
-			data->window->draw(it->second->GetTexture());
+			window->draw(it->second->GetTexture());
 }
 
 void PlayState::DrawBoard()
 {
-	data->window->draw(this->_boardTexture);
+	window->draw(this->_boardTexture);
 }
 
 int PlayState::GetTurn() const
