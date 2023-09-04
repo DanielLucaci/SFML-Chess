@@ -156,12 +156,14 @@
     <ClCompile Include="CaptureMove.cpp" />
     <ClCompile Include="CastleMove.cpp" />
     <ClCompile Include="EnPassant.cpp" />
+    <ClCompile Include="EventHandler.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="King.cpp" />
     <ClCompile Include="Knight.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
+    <ClCompile Include="MainMenuStateEventHandler.cpp" />
     <ClCompile Include="MessageBox.cpp" />
     <ClCompile Include="Move.cpp" />
     <ClCompile Include="NormalMove.cpp" />
@@ -169,10 +171,12 @@
     <ClCompile Include="Piece.cpp" />
     <ClCompile Include="PieceManager.cpp" />
     <ClCompile Include="PlayState.cpp" />
+    <ClCompile Include="PlayStateEventHandler.cpp" />
     <ClCompile Include="Queen.cpp" />
     <ClCompile Include="Rook.cpp" />
     <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="SplashState.cpp" />
+    <ClCompile Include="SplashStateEventHandler.cpp" />
     <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="Team.cpp" />
     <ClCompile Include="TeamManager.cpp" />
@@ -207,6 +211,7 @@
     <ClInclude Include="CheckmateBox.h" />
     <ClInclude Include="DEFINITIONS.h" />
     <ClInclude Include="EnPassant.h" />
+    <ClInclude Include="EventHandler.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="InvalidMoveBox.h" />
@@ -214,6 +219,7 @@
     <ClInclude Include="King.h" />
     <ClInclude Include="Knight.h" />
     <ClInclude Include="MainMenuState.h" />
+    <ClInclude Include="MainMenuStateEventHandler.h" />
     <ClInclude Include="MessageBox.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="NormalMove.h" />
@@ -221,10 +227,12 @@
     <ClInclude Include="Piece.h" />
     <ClInclude Include="PieceManager.h" />
     <ClInclude Include="PlayState.h" />
+    <ClInclude Include="PlayStateEventHandler.h" />
     <ClInclude Include="Queen.h" />
     <ClInclude Include="Rook.h" />
     <ClInclude Include="SoundManager.h" />
     <ClInclude Include="SplashState.h" />
+    <ClInclude Include="SplashStateEventHandler.h" />
     <ClInclude Include="StalemateBox.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateManager.h" />

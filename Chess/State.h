@@ -1,5 +1,6 @@
 #pragma once
 
+class EventHandler;
 class State
 {
 public:
@@ -10,5 +11,7 @@ public:
 
 	virtual void Pause() {}
 	virtual void Resume() {}
+protected:
+	EventHandler* eventHandler;
 };
 

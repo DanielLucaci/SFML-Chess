@@ -160,6 +160,18 @@
     <Filter Include="Managers\Window">
       <UniqueIdentifier>{c4e13726-3f6e-4c1d-8fb4-04fa3605b318}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Event Handlers">
+      <UniqueIdentifier>{2b75d965-b594-4a2f-b057-5f63163338cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Event Handlers\SplashStateEventHandler">
+      <UniqueIdentifier>{bacfc3f6-a6e1-4e42-8a56-e995d94dcd7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Event Handlers\PlayStateEventHandler">
+      <UniqueIdentifier>{f1946cee-0c68-4e08-afd9-6fa66a0b3d72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Event Handlers\MainMenuStateEventHandler">
+      <UniqueIdentifier>{f22b1ce9-8b74-437d-b659-96894d67f21b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -299,6 +311,18 @@
     </ClCompile>
     <ClCompile Include="WindowManager.cpp">
       <Filter>Managers\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="EventHandler.cpp">
+      <Filter>Event Handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="SplashStateEventHandler.cpp">
+      <Filter>Event Handlers\SplashStateEventHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayStateEventHandler.cpp">
+      <Filter>Event Handlers\PlayStateEventHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuStateEventHandler.cpp">
+      <Filter>Event Handlers\MainMenuStateEventHandler</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -463,6 +487,18 @@
     </ClInclude>
     <ClInclude Include="WindowManager.h">
       <Filter>Managers\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="EventHandler.h">
+      <Filter>Event Handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="SplashStateEventHandler.h">
+      <Filter>Event Handlers\SplashStateEventHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayStateEventHandler.h">
+      <Filter>Event Handlers\PlayStateEventHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuStateEventHandler.h">
+      <Filter>Event Handlers\MainMenuStateEventHandler</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -72,14 +72,10 @@ void SplashState::HandleInput() {
 	}
 }
 
-void SplashState::Update(float dt) {
-	// if (_clock.getElapsedTime().asSeconds() > SPLASH_STATE_SHOW_TIME) {
-	//	data->machine->AddState(StateRef(new MainMenuState()));
-	// }
+void SplashState::Update(float dt) 
+{	
 	if(_isLoadCompleted) 
-	{
 		stateManager->AddState(StateRef(new MainMenuState()));
-	}
 }
 
 void SplashState::Draw(float dt) {
