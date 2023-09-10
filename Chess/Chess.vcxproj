@@ -151,6 +151,7 @@
     <ClCompile Include="BlackQueen.cpp" />
     <ClCompile Include="BlackRook.cpp" />
     <ClCompile Include="BlackTeam.cpp" />
+    <ClCompile Include="BlackTeamFactory.cpp" />
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="BoxManager.cpp" />
     <ClCompile Include="CaptureMove.cpp" />
@@ -179,7 +180,9 @@
     <ClCompile Include="SplashStateEventHandler.cpp" />
     <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="Team.cpp" />
+    <ClCompile Include="TeamFactory.cpp" />
     <ClCompile Include="TeamManager.cpp" />
+    <ClCompile Include="TimeManager.cpp" />
     <ClCompile Include="TransformBox.cpp" />
     <ClCompile Include="TransformMove.cpp" />
     <ClCompile Include="UIManager.cpp" />
@@ -191,6 +194,7 @@
     <ClCompile Include="WhiteQueen.cpp" />
     <ClCompile Include="WhiteRook.cpp" />
     <ClCompile Include="WhiteTeam.cpp" />
+    <ClCompile Include="WhiteTeamFactory.cpp" />
     <ClCompile Include="WindowManager.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -203,6 +207,7 @@
     <ClInclude Include="BlackQueen.h" />
     <ClInclude Include="BlackRook.h" />
     <ClInclude Include="BlackTeam.h" />
+    <ClInclude Include="BlackTeamFactory.h" />
     <ClInclude Include="BlackWinsBox.h" />
     <ClInclude Include="Board.h" />
     <ClInclude Include="BoxManager.h" />
@@ -237,7 +242,9 @@
     <ClInclude Include="State.h" />
     <ClInclude Include="StateManager.h" />
     <ClInclude Include="Team.h" />
+    <ClInclude Include="TeamFactory.h" />
     <ClInclude Include="TeamManager.h" />
+    <ClInclude Include="TimeManager.h" />
     <ClInclude Include="TransformBox.h" />
     <ClInclude Include="TransformMove.h" />
     <ClInclude Include="Typedefs.h" />
@@ -250,6 +257,7 @@
     <ClInclude Include="WhiteQueen.h" />
     <ClInclude Include="WhiteRook.h" />
     <ClInclude Include="WhiteTeam.h" />
+    <ClInclude Include="WhiteTeamFactory.h" />
     <ClInclude Include="WhiteWinsBox.h" />
     <ClInclude Include="WindowManager.h" />
   </ItemGroup>

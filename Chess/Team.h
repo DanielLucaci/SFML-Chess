@@ -5,6 +5,7 @@
 #include "CastleMove.h"
 #include "EnPassant.h"
 #include "Move.h"
+#include "TeamFactory.h"
 
 typedef std::vector<Piece*> Pieces;
 
@@ -22,7 +23,6 @@ public:
 	virtual void checkQueenSideCastling(Team*) = 0;
 	virtual void checkKingSideCastling(Team*) = 0;
 	virtual void checkForEnPassant(int) = 0;
-
 
 	void Update(Team*);
 	virtual void UpdateKing() = 0;
@@ -58,5 +58,6 @@ protected:
 	Moves _moves;
 	Places _validPlaces;
 	Table _table;
+	TeamFactory* _teamFactory;
 	int over;
 };

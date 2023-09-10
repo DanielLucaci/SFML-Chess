@@ -172,6 +172,18 @@
     <Filter Include="Event Handlers\MainMenuStateEventHandler">
       <UniqueIdentifier>{f22b1ce9-8b74-437d-b659-96894d67f21b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Managers\Time">
+      <UniqueIdentifier>{0aef71f4-f2ce-4df4-9f46-175ebbd3b46f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Teams\TeamFactory">
+      <UniqueIdentifier>{73fe660c-0054-4de5-ad85-eb425e274cec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Teams\TeamFactory\WhiteTeam">
+      <UniqueIdentifier>{830d180f-9616-4125-b4a5-9c158b8834b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Teams\TeamFactory\BlackTeam">
+      <UniqueIdentifier>{6ea98157-f44e-4ba4-bc9f-3a6eeb5bd7ba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -323,6 +335,18 @@
     </ClCompile>
     <ClCompile Include="MainMenuStateEventHandler.cpp">
       <Filter>Event Handlers\MainMenuStateEventHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeManager.cpp">
+      <Filter>Managers\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="BlackTeamFactory.cpp">
+      <Filter>Game\Teams\TeamFactory\BlackTeam</Filter>
+    </ClCompile>
+    <ClCompile Include="WhiteTeamFactory.cpp">
+      <Filter>Game\Teams\TeamFactory\WhiteTeam</Filter>
+    </ClCompile>
+    <ClCompile Include="TeamFactory.cpp">
+      <Filter>Game\Teams\TeamFactory</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -499,6 +523,18 @@
     </ClInclude>
     <ClInclude Include="MainMenuStateEventHandler.h">
       <Filter>Event Handlers\MainMenuStateEventHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeManager.h">
+      <Filter>Managers\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="TeamFactory.h">
+      <Filter>Game\Teams\TeamFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="BlackTeamFactory.h">
+      <Filter>Game\Teams\TeamFactory\BlackTeam</Filter>
+    </ClInclude>
+    <ClInclude Include="WhiteTeamFactory.h">
+      <Filter>Game\Teams\TeamFactory\WhiteTeam</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

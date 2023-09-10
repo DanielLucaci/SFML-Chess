@@ -9,7 +9,6 @@ public:
 	Game(int, int, const std::string&);
 private:
 	const float dt = 1.f / 60.f;
-	sf::Clock _clock;
 	void Run();
 };
 

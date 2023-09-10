@@ -7,7 +7,6 @@ public:
 
 	BlackTeam(const BlackTeam&);
 
-	
 	void init();
 
 	bool ProcessIllegalMoves(Team*);

@@ -3,8 +3,7 @@
 #include "AssetManager.h"
 #include "StateManager.h"
 #include "WindowManager.h"
-
-// TODO: Inject window
+#include "TimeManager.h"
 
 Game::Game(int width, int height, const std::string& title) 
 {
@@ -16,6 +15,8 @@ Game::Game(int width, int height, const std::string& title)
 	assetManager->LoadIcon("Window Icon", ICON_FILEPATH);
 	sf::Image& icon = assetManager->GetIcon("Window Icon");
 	window->setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
+	
+	timeManager->addTimer("GAME_CLOCK");
 
 	stateManager->AddState(StateRef(new SplashState()));
 	
@@ -24,12 +25,12 @@ Game::Game(int width, int height, const std::string& title)
 
 void Game::Run() {
 	float newTime, frameTime;
-	float currentTime = this->_clock.getElapsedTime().asSeconds();
+	float currentTime = timeManager->getTime("GAME_CLOCK");
 	float accumulator = 0.f;
 
 	while (window->isOpen()) {
 		stateManager->ProcessStateChanges();
-		newTime = this->_clock.getElapsedTime().asSeconds();
+		newTime = timeManager->getTime("GAME_CLOCK");
 		frameTime = newTime - currentTime;
 		currentTime = newTime;
 

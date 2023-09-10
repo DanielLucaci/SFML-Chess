@@ -8,11 +8,13 @@
 #include "UIManager.h"
 #include "AssetManager.h"
 #include "WindowManager.h"
+#include "TimeManager.h"
 #include "PlayStateEventHandler.h"
 
 PlayState::PlayState() : _soundManager(), _pieceManager(), _boxManager() {
 	this->InitTable();
 	this->ReadTable();
+	timeManager->addTimer("BOX_ELAPSED_TIME");
 	this->eventHandler = new PlayStateEventHandler(this);
 	this->_whiteTeam = new WhiteTeam(this->_table);
 	this->_blackTeam = new BlackTeam(this->_table);
@@ -37,7 +39,7 @@ void PlayState::HandleInput() {
 void PlayState::Update(float dt) {
 	uiManager->Update();
 
-	if (this->_box != nullptr && this->_elapsedTimeBox.getElapsedTime().asSeconds() >= TIME_TO_DISPLAY_MESSAGE) {
+	if (this->_box != nullptr && timeManager->isGreaterThan("BOX_ELAPSED_TIME", TIME_TO_DISPLAY_MESSAGE)) {
 		this->_box = nullptr;
 		this->_currentState = PlayStates::PLAYING;
 	}
@@ -120,7 +122,7 @@ void PlayState::Update(float dt) {
 					}
 
 					if (this->_isCheckmate) {
-						this->_elapsedTimeBox.restart();
+						timeManager->resetTimer("BOX_ELAPSED_TIME");
 						if(this->_turn == 0)
 							this->_soundManager.PlaySound("Win");
 						else 
@@ -129,7 +131,7 @@ void PlayState::Update(float dt) {
 						this->_box = (this->_turn == 0) ? this->_boxManager.GetBox("White Wins") : this->_boxManager.GetBox("Black Wins");
 					}
 					else if (this->_isStalemate) {
-						this->_elapsedTimeBox.restart();
+						timeManager->resetTimer("BOX_ELAPSED_TIME");
 						this->_currentState = PlayStates::STALEMATE;
 						this->_box = this->_boxManager.GetBox("Stalemate");
 					}
@@ -142,7 +144,7 @@ void PlayState::Update(float dt) {
 			}
 
 			if (isMoved == false) {
-				this->_elapsedTimeBox.restart();
+				timeManager->resetTimer("BOX_ELAPSED_TIME");
 				this->_currentState = PlayStates::INVALID;
 				this->_soundManager.PlaySound("Invalid");
 				this->_box = this->_boxManager.GetBox("Invalid Move");
@@ -158,7 +160,7 @@ void PlayState::Update(float dt) {
 
 		else {
 			if (!Utils::isValidPiece(this->_turn, clickedPiece)) {
-				this->_elapsedTimeBox.restart();
+				timeManager->resetTimer("BOX_ELAPSED_TIME");
 				this->_selectedPiece = 0;
 				this->_box = this->_boxManager.GetBox("Invalid Piece");
 				this->_soundManager.PlaySound("Invalid");

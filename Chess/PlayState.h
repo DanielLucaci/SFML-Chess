@@ -42,8 +42,6 @@ private:
 	Table _table;
 
 	// Clocks
-	sf::Clock _elapsedTime;
-	sf::Clock _elapsedTimeBox;
 	bool _lockClick;
 
 	// Box
