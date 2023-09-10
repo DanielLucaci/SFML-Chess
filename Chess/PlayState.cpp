@@ -8,10 +8,12 @@
 #include "UIManager.h"
 #include "AssetManager.h"
 #include "WindowManager.h"
+#include "PlayStateEventHandler.h"
 
 PlayState::PlayState() : _soundManager(), _pieceManager(), _boxManager() {
 	this->InitTable();
 	this->ReadTable();
+	this->eventHandler = new PlayStateEventHandler(this);
 	this->_whiteTeam = new WhiteTeam(this->_table);
 	this->_blackTeam = new BlackTeam(this->_table);
 	this->_pieceManager.LoadPieces(_whiteTeam).LoadPieces(_blackTeam);
@@ -29,26 +31,7 @@ void PlayState::Init() {
 }
 
 void PlayState::HandleInput() {
-	sf::Event event;
-	while (window->pollEvent(event)) {
-		switch (event.type) {
-		case sf::Event::Closed:
-			window->close();
-			break;
-		case sf::Event::MouseButtonPressed:
-			if (event.mouseButton.button == sf::Mouse::Left && !this->_lockClick) {
-				this->Update(0.f);
-				this->_lockClick = true;
-			}
-			break;
-		case sf::Event::MouseButtonReleased: //Mouse button Released now.
-			if (event.mouseButton.button == sf::Mouse::Left && this->_lockClick)
-				this->_lockClick = false;
-			break;
-		default:
-			break;
-		}
-	}
+	eventHandler->handleInput();
 }
 
 void PlayState::Update(float dt) {
@@ -243,6 +226,10 @@ int PlayState::GetTurn() const
 	return this->_turn;
 }
 
+bool& PlayState::GetLockClick()
+{
+	return this->_lockClick;
+}
 
 void PlayState::PrintTable() {
 	std::cout << '\n';

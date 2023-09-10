@@ -4,12 +4,14 @@
 #include "InputManager.h"
 #include "StateManager.h"
 #include "WindowManager.h"
+#include "MainMenuStateEventHandler.h"
 
 // TODO: Inject window
 
 MainMenuState::MainMenuState()
 {
 	this->Init();
+	this->eventHandler = new MainMenuStateEventHandler(this);
 }
 
 void MainMenuState::Init() 
@@ -23,28 +25,7 @@ void MainMenuState::Init()
 }
 
 void MainMenuState::HandleInput() {
-	sf::Event event; 
-	while (window->pollEvent(event)) {
-		switch (event.type) {
-			case sf::Event::Closed:
-				window->close();
-				break;
-			case sf::Event::MouseButtonPressed:
-				// Resume
-				if (inputManager->isSpriteClicked(_playButton, sf::Mouse::Left)) {
-					stateManager->AddState(StateRef(new PlayState()));
-				}
-				break;
-			case sf::Event::MouseMoved:
-				if (inputManager->isSpriteHovered(_playButton))
-					_playButton.setTexture(assetManager->GetTexture("Play Button Hover"));
-				else
-					_playButton.setTexture(assetManager->GetTexture("Play Button"));
-				break;
-			default:
-				break;
-		}
-	}
+	eventHandler->handleInput();
 }
 
 void MainMenuState::Update(float dt) {
@@ -56,4 +37,9 @@ void MainMenuState::Draw(float dt) {
 	window->draw(_background);
 	window->draw(_playButton);
 	window->display();
+}
+
+sf::Sprite& MainMenuState::getPlayButtonSprite()
+{
+	return this->_playButton;
 }

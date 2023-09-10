@@ -2,19 +2,19 @@
 #include "State.h"
 #include <SFML/Window.hpp>
 #include <map>
+#include <functional>
 
-typedef void (*HandlerFunction)();
+typedef std::function<void(void)> HandlerFunction;
 
 class EventHandler
 {
 public:
-	EventHandler(State* state);
+	EventHandler();
 	~EventHandler() = default;
 	void handleCloseEvent();
 	void handleInput();
-	virtual void handleMouseButtonPressed() = 0;
 protected:
-	State* _state;
 	std::map<sf::Event::EventType, HandlerFunction> _eventMap;
+	sf::Event event;
 };
 

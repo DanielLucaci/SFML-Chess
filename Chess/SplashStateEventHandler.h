@@ -5,5 +5,5 @@ class SplashStateEventHandler: public EventHandler
 {
 public:
 	SplashStateEventHandler(State* state);
-	void handleMouseButtonPressed() override;
+	~SplashStateEventHandler() = default;
 };

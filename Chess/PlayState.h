@@ -7,7 +7,6 @@
 #include "BoxManager.h"
 #include "TransformBox.h"
 
-
 class PlayState: public State
 {
 public:
@@ -19,6 +18,8 @@ public:
 	void DrawPieces();
 	void DrawBoard();
 	int GetTurn() const;
+
+	bool& GetLockClick();
 private:
 	void ReadTable();
 	void PrintTable();

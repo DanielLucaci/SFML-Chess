@@ -5,6 +5,7 @@
 #include "StateManager.h"
 #include "AssetManager.h"
 #include "WindowManager.h"
+#include "SplashStateEventHandler.h"
 
 void SplashState::LoadAssets() 
 {
@@ -42,12 +43,11 @@ void SplashState::LoadAssets()
 SplashState::SplashState(): _isLoadCompleted(false)
 {
 	_loadThread = std::thread([this]() {
-		// Load assets asynchronously in this thread
-		LoadAssets();
-	  
+		LoadAssets();	  
 		_isLoadCompleted = true;
 	});
-
+    
+	this->eventHandler = new SplashStateEventHandler(this);
 	this->Init();
 }
 
@@ -57,19 +57,7 @@ void SplashState::Init() {
 }
 
 void SplashState::HandleInput() {
-	sf::Event event;
-	while (window->pollEvent(event)) {
-		switch (event.type) {
-			case sf::Event::Closed:
-				window->close();
-				break;
-			case sf::Event::MouseButtonPressed:
-				stateManager->AddState(StateRef(new MainMenuState()));
-				break;
-			default:
-				break;
-		}
-	}
+	eventHandler->handleInput();
 }
 
 void SplashState::Update(float dt) 

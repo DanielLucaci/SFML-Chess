@@ -1,11 +1,10 @@
 #include "EventHandler.h"
 #include "WindowManager.h"
+#include <utility>
 
-EventHandler::EventHandler(State* state)
+EventHandler::EventHandler()
 {
-	this->_state = state;
-	this->_eventMap.emplace((sf::Event::Closed, handleCloseEvent));
-	this->_eventMap.emplace((sf::Event::MouseButtonPressed, handleMouseButtonPressed));
+	this->_eventMap.emplace(sf::Event::Closed, std::bind(&EventHandler::handleCloseEvent, this));
 }
 
 void EventHandler::handleCloseEvent()
@@ -15,7 +14,9 @@ void EventHandler::handleCloseEvent()
 
 void EventHandler::handleInput() 
 {
-	sf::Event event;
 	while (window->pollEvent(event))
-		this->_eventMap[event.type]();
+	{
+		if(this->_eventMap.count(event.type))
+			this->_eventMap[event.type]();
+	}
 }

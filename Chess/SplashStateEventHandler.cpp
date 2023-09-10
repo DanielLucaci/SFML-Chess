@@ -3,10 +3,7 @@
 #include "SFML/Window.hpp"
 #include "WindowManager.h"
 
-SplashStateEventHandler::SplashStateEventHandler(State* state): EventHandler(state)
+SplashStateEventHandler::SplashStateEventHandler(State* state): EventHandler()
 {
 }
 
-void SplashStateEventHandler::handleMouseButtonPressed()
-{
-}
